@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulários HTML e formatação CSS</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <script>
+        function salvar(){
+            let form = document.getElementById("form-cadastro")
+            let nome = form.nome.value
+            let especie = form.especie.value
+            let altura = form.altura.value
+            if (nome.trim() == ""){
+                alert("Preencha o nome")
+                return false
+            }
+            if (especie.trim() == ""){
+                alert("Preencha a espécie")
+                return false
+            }
+            if (altura.trim() == ""){
+                alert("Preencha a altura")
+                return false
+            }
+            alert("Planta cadastrada com sucesso")
+        }
+    </script>
+</head>
+<body>
+    <form id="form-cadastro" onsubmit="return false">
+        <div class="titulo">
+            <h1>Cadastrar plantas</h1>
+        </div>
+        <div class="linha">
+            <label>Nome da planta</label>
+            <input type="text" name="nome" maxlength="40" autocomplete="off" />
+        </div>
+        <div class="linha">
+            <label>Espécie</label>
+            <input type="text" name="especie" maxlength="80" />
+        </div>
+        <div class="linha">
+            <label>Altura máxima (em metros)</label>
+            <input type="number" name="altura" maxlength="10" />
+        </div>
+        <input type="submit" name="enviar" value="Cadastrar" onclick="salvar()" />
+    </form>
+</body>
+</html>
